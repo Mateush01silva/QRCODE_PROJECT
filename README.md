@@ -115,7 +115,6 @@ Sheets("Reprint").Visible = True
 Sheets("Reprint").Activate
     Texto = Planilha23.Range("B1").Text
     URL = "http://192.168.2.100:8000/qrapp/generate_qr?data=" & Texto
-    'URL = "https://chart.googleapis.com/chart?chs=95x95&cht=qr&chl=" & Texto
 
     On Error Resume Next
     Planilha23.Pictures("QRCode").Delete
