@@ -98,4 +98,59 @@ http://192.168.1.100:8000/qrapp/generate_qr?data=SEU_TEXTO
   - `urls.py`: URLs raiz do projeto.
   - `wsgi.py`: Configurações para WSGI.
 
+## Exemplo de aplicação
 
+Você pode integrar a API com VBA para gerar QR Codes diretamente de uma aplicação Excel, por exemplo:
+
+Sub print_cartao()
+    Dim URL As String
+    Dim Texto As String
+    Dim URL2 As String
+    Dim Texto2 As String
+''''''''''''''''''''''''''''''''''''''''''
+    Application.EnableEvents = False
+    Application.ScreenUpdating = False
+Sheets("Reprint").Visible = True
+Sheets("Reprint").Activate
+    Texto = Planilha23.Range("B1").Text
+    URL = "http://192.168.2.100:8000/qrapp/generate_qr?data=" & Texto
+    'URL = "https://chart.googleapis.com/chart?chs=95x95&cht=qr&chl=" & Texto
+
+    On Error Resume Next
+    Planilha23.Pictures("QRCode").Delete
+    Range("A9").Select
+    Planilha23.Range("A9").Select
+    Planilha23.Pictures.Insert(URL).Select
+    With Selection
+        .Name = "QRCode"
+        .Top = .TopLeftCell.Top + 10
+        .Left = .TopLeftCell.Left + 10
+        .Width = 70
+    End With
+    
+    Texto2 = Planilha23.Range("E2").Text
+    URL2 = "http://192.168.2.100:8000/qrapp/generate_qr?data=" & Texto2
+
+    On Error Resume Next
+    Planilha23.Pictures("QRCode2").Delete
+    Range("A9").Select
+    Planilha23.Range("A9").Select
+    Planilha23.Pictures.Insert(URL2).Select
+    With Selection
+        .Name = "QRCode2"
+        .Top = .TopLeftCell.Top - 189
+        .Left = .TopLeftCell.Left + 10
+        .Width = 50
+    End With
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    Application.ScreenUpdating = False
+    Application.EnableEvents = False
+    Sheets("Reprint").Select
+    Range("A4:B12").Select
+    Selection.PrintOut Copies:=1, Collate:=True
+    Application.CutCopyMode = False
+    Sheets("Comparador").Select
+Sheets("Reprint").Visible = False
+    Application.EnableEvents = True
+    Application.ScreenUpdating = True
+End Sub
