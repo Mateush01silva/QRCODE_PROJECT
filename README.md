@@ -1,6 +1,20 @@
 # QRCODE_PROJECT
 
-Este é um projeto Django para gerar QR Codes através de uma API.
+## Descrição
+
+O QRCODE_PROJECT é uma aplicação web desenvolvida com o framework Django que permite a geração de QR Codes de maneira simples e eficiente. Este projeto disponibiliza uma API que pode ser acessada por meio de requisições HTTP GET para gerar QR Codes dinamicamente com base nos dados fornecidos pelo usuário. O QR Code gerado é retornado como uma imagem PNG, que pode ser utilizada em diversas aplicações, como automação de processos, geração de etiquetas, marketing e muito mais.
+
+## Funcionalidades
+
+Geração Dinâmica de QR Codes: Gera QR Codes com base nos dados fornecidos na requisição.
+API Simples e Intuitiva: A API é acessível por meio de uma URL e aceita parâmetros de dados diretamente na requisição.
+Integração Fácil: Pode ser facilmente integrada a outros sistemas e aplicações que necessitem de QR Codes.
+
+## Tecnologias Utilizadas
+
+Django: Framework web de alto nível que facilita o desenvolvimento rápido e com design limpo.
+qrcode: Biblioteca Python para geração de QR Codes.
+SQLite: Banco de dados leve utilizado durante o desenvolvimento (pode ser substituído por outro banco de dados conforme a necessidade).
 
 ## Estrutura do Projeto
 
