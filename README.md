@@ -102,7 +102,7 @@ http://192.168.1.100:8000/qrapp/generate_qr?data=SEU_TEXTO
 
 Você pode integrar a API com VBA para gerar QR Codes diretamente de uma aplicação Excel, por exemplo:
 
-    ```sh
+    ```vbnet
 Sub print_cartao()
     Dim URL As String
     Dim Texto As String
