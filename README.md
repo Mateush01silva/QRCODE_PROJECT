@@ -46,7 +46,7 @@ QRCODE_PROJECT/
 
 1. Clone o repositório:
     ```sh
-    git clone https://github.com/seu-usuario/QRCODE_PROJECT.git
+    git clone https://github.com/Mateush01silva/QRCODE_PROJECT.git
     cd QRCODE_PROJECT
     ```
 
