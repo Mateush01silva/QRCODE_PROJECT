@@ -46,7 +46,7 @@ QRCODE_PROJECT/
 
 1. Clone o repositório:
     ```sh
-    git clone https://github.com/seu-usuario/QRCODE_PROJECT.git
+    git clone https://github.com/Mateush01silva/QRCODE_PROJECT.git
     cd QRCODE_PROJECT
     ```
 
@@ -98,7 +98,7 @@ http://192.168.1.100:8000/qrapp/generate_qr?data=SEU_TEXTO
   - `urls.py`: URLs raiz do projeto.
   - `wsgi.py`: Configurações para WSGI.
 
-## Exemplo de aplicação
+  ## Exemplo de aplicação
 
 Você pode integrar a API com VBA para gerar QR Codes diretamente de uma aplicação Excel, por exemplo:
 
